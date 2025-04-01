@@ -58,7 +58,7 @@ body {
 @media (max-width: 768px) {
     .page img {
         max-width: 85vw; /* Adaptarse mejor a teléfonos y tablets */
-        max-height: 80vh;
+        max-height: 90vh;
         border-radius: 10px;
     }
 }
