@@ -57,8 +57,8 @@ body {
 /* Responsividad para dispositivos móviles */
 @media (max-width: 768px) {
     .page img {
-        max-width: 75vw; /* Adaptarse mejor a teléfonos y tablets */
-        max-height: 70vh;
+        max-width: 85vw; /* Adaptarse mejor a teléfonos y tablets */
+        max-height: 80vh;
         border-radius: 10px;
     }
 }
@@ -66,8 +66,8 @@ body {
 /* Responsividad para teléfonos pequeños */
 @media (max-width: 480px) {
     .page img {
-        max-width: 70vw; /* Usar casi todo el ancho disponible */
-        max-height: 65vh;
+        max-width: 80vw; /* Usar casi todo el ancho disponible */
+        max-height: 85vh;
         border-radius: 8px;
     }
 }
