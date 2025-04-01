@@ -41,7 +41,7 @@ body {
 
 .page img {
     max-width: 90vw;
-    max-height: 90vh;
+    max-height: 80vh;
     border-radius: 12px;
     border: 2px solid #cccccc;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -57,8 +57,8 @@ body {
 /* Responsividad para dispositivos móviles */
 @media (max-width: 768px) {
     .page img {
-        max-width: 95vw; /* Adaptarse mejor a teléfonos y tablets */
-        max-height: 90vh;
+        max-width: 85vw; /* Adaptarse mejor a teléfonos y tablets */
+        max-height: 80vh;
         border-radius: 10px;
     }
 }
@@ -66,8 +66,8 @@ body {
 /* Responsividad para teléfonos pequeños */
 @media (max-width: 480px) {
     .page img {
-        max-width: 98vw; /* Usar casi todo el ancho disponible */
-        max-height: 95vh;
+        max-width: 85vw; /* Usar casi todo el ancho disponible */
+        max-height: 80vh;
         border-radius: 8px;
     }
 }
