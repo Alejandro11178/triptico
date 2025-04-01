@@ -3,10 +3,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const pages = document.querySelectorAll('.page');
     const indicatorsContainer = document.getElementById('indicators');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
     let currentIndex = 0;
     let startX = 0;
     let currentX = 0;
     let isDragging = false;
+    let hideTimeout;
 
     // Crear puntitos según la cantidad de páginas
     pages.forEach((_, index) => {
@@ -19,8 +22,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const indicators = document.querySelectorAll('.indicator');
 
     function updatePages() {
-        console.log('Actualizando páginas... Índice actual:', currentIndex);
-
         pages.forEach((page, index) => {
             if (index < currentIndex) {
                 page.style.transition = "transform 0.8s ease, opacity 0.8s ease";
@@ -40,31 +41,44 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Actualizar puntitos indicadores
         indicators.forEach((indicator, index) => {
             indicator.classList.toggle('active', index === currentIndex);
         });
+
+        showIndicatorsTemporarily();
     }
 
-    document.getElementById('prev').addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updatePages();
-        }
-    });
+    function showIndicatorsTemporarily() {
+        clearTimeout(hideTimeout);
+        indicatorsContainer.style.opacity = "1";
 
-    document.getElementById('next').addEventListener('click', () => {
-        if (currentIndex < pages.length - 1) {
-            currentIndex++;
-            updatePages();
-        }
-    });
+        hideTimeout = setTimeout(() => {
+            indicatorsContainer.style.opacity = "0";
+        }, 2000); // Se ocultan después de 2 segundos de inactividad
+    }
+
+    if (prevButton && nextButton) {
+        prevButton.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updatePages();
+            }
+        });
+
+        nextButton.addEventListener('click', () => {
+            if (currentIndex < pages.length - 1) {
+                currentIndex++;
+                updatePages();
+            }
+        });
+    }
 
     // Control por gestos táctiles (Móvil)
     window.addEventListener('touchstart', (e) => {
         startX = e.touches[0].clientX;
         currentX = startX;
         isDragging = true;
+        showIndicatorsTemporarily();
     });
 
     window.addEventListener('touchmove', (e) => {
