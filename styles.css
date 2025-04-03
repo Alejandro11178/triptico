@@ -160,8 +160,8 @@ body {
 .logo {
     position: absolute;
     top: 30px; /* Distancia desde la parte superior */
-    right: 30px; /* Distancia desde la parte derecha */
-    width: 150px; /* Tamaño base del logo */
+    left: 30px; /* Distancia desde la parte izquierda */
+    width: 200px; /* Tamaño base del logo */
     height: auto;
     transition: width 0.3s, height 0.3s;
     z-index: 9999; /* Asegura que esté siempre visible */
@@ -170,7 +170,11 @@ body {
 /* Hacer el logo más pequeño en móviles */
 @media (max-width: 768px) {
     .logo {
-        width: 100px; /* Tamaño reducido para móviles */
+        width: 90px; /* Tamaño reducido para móviles */
+        top: 20px; /* Se desactiva el 'top' */
+        left: 30px; /* Centrado horizontalmente */
+        height: auto;
+        transform: translateX(width 0.3s, height 0.3s); /* Ajuste para centrarlo */
     }
 }
 
