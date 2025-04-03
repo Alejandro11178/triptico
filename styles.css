@@ -178,3 +178,24 @@ body {
     }
 }
 
+/* Logo de fondo */
+.logo-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45%;
+    height: auto;
+    
+    z-index: 1; /* Debajo del tríptico */
+    pointer-events: none; /* Permitir clics en el contenido frontal */
+}
+
+/* Ajustes específicos para móviles */
+@media (max-width: 768px) {
+    .logo-background {
+        width: 60%; /* Tamaño más grande en móviles */
+        
+    }
+}
+
