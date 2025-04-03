@@ -170,7 +170,7 @@ body {
 /* Hacer el logo más pequeño en móviles */
 @media (max-width: 768px) {
     .logo {
-        width: 50px; /* Tamaño reducido para móviles */
+        width: 100px; /* Tamaño reducido para móviles */
     }
 }
 
